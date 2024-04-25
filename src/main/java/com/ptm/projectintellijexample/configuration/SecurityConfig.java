@@ -28,10 +28,10 @@ public class SecurityConfig {
                         requestMatchers("/**").permitAll().
                         requestMatchers("/admin/**").hasAuthority("ADMIN").
                         requestMatchers("/admin/**").permitAll().
-                anyRequest().authenticated()).formLogin(login->login.loginPage("/admin/logon").loginProcessingUrl("/logon").
+                anyRequest().authenticated()).formLogin(login->login.loginPage("/admin/logon").loginProcessingUrl("/admin/logon").
                 usernameParameter("username").passwordParameter("password").
-                defaultSuccessUrl("/admin", true)).logout(logout
-                        -> logout.logoutUrl("admin/logout").logoutSuccessUrl("/logon").invalidateHttpSession(true));
+                defaultSuccessUrl("/admin/logon", true)).logout(logout
+                        -> logout.logoutUrl("admin/logout").logoutSuccessUrl("/admin/logon").invalidateHttpSession(true));
 
 
         return http.build();

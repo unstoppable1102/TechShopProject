@@ -205,7 +205,9 @@
                         <div class="single-product-content">
                             <div class="inner">
                                 <h2 class="product-title" th:text="${product.productName}"></h2>
-                                <span class="price-amount" th:text="${product.price}"></span>
+                                <div class="price-amount">
+                                    <span>$</span><span  th:text="${product.price}"></span>
+                                </div>
                                 <div class="product-rating">
                                     <div class="star-rating">
                                         <i class="fas fa-star"></i>
@@ -216,6 +218,10 @@
                                     </div>
                                     <div class="review-number">6,405</div>
                                     <div class="total-answerd">2 answered questions</div>
+                                </div>
+                                <div class="d-flex">
+                                    <h5>Category :</h5>
+                                    <a class="ml--10" href="" th:text="${product.category.name}"></a>
                                 </div>
                                 <ul class="description">
                                     <li>Meet Echo Dot - Our most compact smart speaker that fits perfectly into small spaces.</li>

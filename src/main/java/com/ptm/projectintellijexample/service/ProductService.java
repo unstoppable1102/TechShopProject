@@ -9,7 +9,8 @@ import java.util.List;
 public interface ProductService extends GenericService<Product,Integer>{
     List<Product> top8Products();
     List<Product> newArrival();
-    List<Product> getProductsByCategoryExcludingProduct(Integer categoryId, Integer productId);
     Page<Product> getAll(Integer pageNo);
+    List<Product> findProductsByCategoryIdExcludingProductId(Integer categoryId, Integer productId);
+
 
 }

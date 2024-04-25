@@ -3,10 +3,10 @@ package com.ptm.projectintellijexample.controller.home;
 import com.ptm.projectintellijexample.service.CategoryService;
 import com.ptm.projectintellijexample.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @RequiredArgsConstructor
@@ -15,7 +15,10 @@ public class HomeController {
     private final ProductService productService;
 
     @GetMapping("")
-    public String home(Model model) {
+    public String home(Model model, Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            model.addAttribute("user", authentication.getName());
+        }
         model.addAttribute("categories", categoryService.getAll());
         model.addAttribute("t8products", productService.top8Products());
         model.addAttribute("newProduct", productService.newArrival());

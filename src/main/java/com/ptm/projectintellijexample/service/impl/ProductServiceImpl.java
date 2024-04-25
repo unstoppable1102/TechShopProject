@@ -74,13 +74,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getProductsByCategoryExcludingProduct(Integer categoryId, Integer productId) {
-        return this.productRepository.findByCategoryExcludingProduct(categoryId, productId);
-    }
-
-    @Override
     public Page<Product> getAll(Integer pageNo) {
         Pageable pageable = PageRequest.of(pageNo-1, 6);
         return productRepository.findAll(pageable);
     }
+
+    @Override
+    public List<Product> findProductsByCategoryIdExcludingProductId(Integer categoryId, Integer productId) {
+        return this.productRepository.findProductsByCategoryIdExcludingProductId(categoryId, productId);
+    }
+
 }

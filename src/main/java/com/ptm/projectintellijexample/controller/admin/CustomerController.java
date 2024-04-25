@@ -15,7 +15,7 @@ public class CustomerController {
 
     @PostMapping("/logon")
     public String processLogon(){
-        return "redirect:/admin";
+        return "redirect:/admin/";
     }
 
     @RequestMapping("/logout")

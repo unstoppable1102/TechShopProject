@@ -1,4 +1,4 @@
-<header class="header axil-header header-style-1" th:fragment="header">
+<header class="header axil-header header-style-1" th:fragment="header" xmlns:th="http://www.thymeleaf.org">
 
     <div class="axil-header-top">
         <div class="container">
@@ -32,7 +32,7 @@
                         <ul class="quick-link">
                             <li><a href="#">Trợ giúp</a></li>
                             <li><a href="/sign-up">Đăng ký</a></li>
-                            <li><a href="/sign-up">Đăng nhập</a></li>
+                            <li><span th:text="${name}"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="#">Danh mục</a>
-                                <ul class="axil-submenu" >
+                                <ul class="axil-submenu">
                                     <li><a href="/wishlist">Wishlist</a></li>
                                     <li><a href="/cart">Cart</a></li>
                                     <li><a href="/checkout">Checkout</a></li>

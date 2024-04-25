@@ -28,9 +28,8 @@ public class ProductController {
     public String productDetail(@PathVariable Integer productId, Model model){
         Product product = productService.findById(productId);
         model.addAttribute("product", product);
-        model.addAttribute("categories", categoryService.getAll());
         if (product != null && product.getCategory() != null){
-            List<Product> productCategory = productService.getProductsByCategoryExcludingProduct(product.getCategoryId(), productId);
+            List<Product> productCategory = productService.findProductsByCategoryIdExcludingProductId(product.getCategoryId(),productId);
             model.addAttribute("pCategory", productCategory);
         }
         return "home/product-detail";

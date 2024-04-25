@@ -48,14 +48,7 @@
                                                 <h6>Direction</h6>
                                                 <span>Select a direction</span>
                                             </div>
-                                            <div class="input-group">
-                                                <button id="dir-ltr-button" class="btn btn-default btn-sm btn-active">
-                                                    LTR
-                                                </button>
-                                                <button id="dir-rtl-button" class="btn bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 active:bg-gray-100 dark:active:bg-gray-500 dark:active:border-gray-500 text-gray-600 dark:text-gray-100 radius-round h-9 px-3 py-2 text-sm">
-                                                    RTL
-                                                </button>
-                                            </div>
+
                                         </div>
                                         <div>
                                             <h6 class="mb-3">Nav Mode</h6>
@@ -839,68 +832,8 @@
                                         <h3 class="mb-2">Welcome on Board, lets get started with Elstar</h3>
                                         <p class="text-base">Telling us a bit about yourself to get the best experience, this will only take a minute or two.</p>
                                         <div class="mt-8 max-w-[350px] mx-auto">
-                                            <a href="/admin/project" class="btn btn-solid block w-full mb-2 next-button">Get started</a>
-                                            <a href="#" class="btn btn-plain block w-full skip-button">Skip now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="welcome-page-4" class="welcome-page-section h-full flex flex-col items-center justify-center hidden">
-                                    <div>
-                                        <h3 class="mb-2 text-center">
-                                            <span>🚀 Let's get you set up with</span>
-                                            <span class="text-indigo-600">Elstar</span>
-                                        </h3>
-                                        <div class="mt-8 max-w-[800px] lg:min-w-[800px]">
-                                            <div class="card mb-4 card-layout-frame" role="presentation">
-                                                <div class="card-body">
-                                                    <div class="md:flex items-center md:justify-between gap-4">
-                                                        <div class="flex items-center gap-4 ">
-                                                            <span class="font-semibold text-xl rounded-full border-2 min-w-[30px] h-[30px] flex items-center justify-center border-indigo-600 text-indigo-600">1</span>
-                                                            <div>
-                                                                <h5>Complete your Account Information</h5>
-                                                                <p>Fill in your information to complete your account</p>
-                                                            </div>
-                                                        </div>
-                                                        <button class="btn btn-solid btn-sm mt-4 md:mt-0">Fill now</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-4 card-layout-frame" role="presentation">
-                                                <div class="card-body">
-                                                    <div class="md:flex items-center md:justify-between gap-4">
-                                                        <div class="flex items-center gap-4">
-                                                                    <span class="text-3xl">
-                                                                        <svg stroke="currentColor" fill="none" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                                                                        </svg>
-                                                                    </span>
-                                                            <div>
-                                                                <h5>Create your first workspace</h5>
-                                                                <p>We recommend one project per workspace</p>
-                                                            </div>
-                                                        </div>
-                                                        <button class="btn btn-solid btn-sm mt-4 md:mt-0" disabled>Create Workspace</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card mb-4 card-layout-frame" role="presentation">
-                                                <div class="card-body">
-                                                    <div class="md:flex items-center md:justify-between gap-4">
-                                                        <div class="flex items-center gap-4">
-                                                                    <span class="text-3xl">
-                                                                        <svg stroke="currentColor" fill="none" stroke-width="2" viewbox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                                                                        </svg>
-                                                                    </span>
-                                                            <div>
-                                                                <h5>Invite team members</h5>
-                                                                <p>Show the team what you have completed so far.</p>
-                                                            </div>
-                                                        </div>
-                                                        <button class="btn btn-solid btn-sm mt-4 md:mt-0" disabled>Invite</button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <a th:href="@{/admin/project}" class="btn btn-solid block w-full mb-2 next-button">Get started</a>
+                                            <a th:href="@{/admin/project}" class="btn btn-plain block w-full skip-button">Skip now</a>
                                         </div>
                                     </div>
                                 </div>

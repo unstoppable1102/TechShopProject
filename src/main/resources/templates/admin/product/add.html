@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{admin/layout/head :: head}"></head>
+
+<body>
+<!-- App Start-->
+<div id="root">
+    <!-- App Layout-->
+    <div class="app-layout-modern flex flex-auto flex-col">
+        <div class="flex flex-auto min-w-0">
+            <!-- Side Nav start-->
+            <div th:replace="~{admin/layout/sidebar :: sidebar}"></div>
+            <!-- Side Nav end-->
+
+            <!-- Header Nav start-->
+            <div class="flex flex-col flex-auto min-h-screen min-w-0 relative w-full bg-white dark:bg-gray-800 border-l border-gray-200 dark:border-gray-700">
+                <header th:replace="~{admin/layout/header :: header}"></header>
+                <!-- Popup start -->
+                <div class="modal fade" id="nav-config" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog drawer drawer-end">
+                        <div class="drawer-content">
+                            <div class="drawer-header">
+                                <h4>Theme Config</h4>
+                                <span class="close-btn close-btn-default" role="button" data-bs-dismiss="modal">
+											<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+											</svg>
+										</span>
+                            </div>
+                            <div class="drawer-body">
+                                <div class="flex flex-col h-full justify-between">
+                                    <div class="flex flex-col gap-y-10 mb-6">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h6>Dark Mode</h6>
+                                                <span>Switch theme to dark mode</span>
+                                            </div>
+                                            <div>
+                                                <label class="switcher">
+                                                    <input name="dark-mode-toggle" type="checkbox" value="">
+                                                    <span class="switcher-toggle"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h6>Direction</h6>
+                                                <span>Select a direction</span>
+                                            </div>
+                                            <div class="input-group">
+                                                <button id="dir-ltr-button" class="btn btn-default btn-sm btn-active">
+                                                    LTR
+                                                </button>
+                                                <button id="dir-rtl-button" class="btn bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 active:bg-gray-100 dark:active:bg-gray-500 dark:active:border-gray-500 text-gray-600 dark:text-gray-100 radius-round h-9 px-3 py-2 text-sm">
+                                                    RTL
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-3">Nav Mode</h6>
+                                            <div class="inline-flex">
+                                                <label class="radio-label inline-flex mr-3" for="nav-mode-radio-default">
+                                                    <input id="nav-mode-radio-default" type="radio" value="default" name="nav-mode-radio-group" class="radio text-primary-600" checked>
+                                                    <span>Default</span>
+                                                </label>
+                                                <label class="radio-label inline-flex mr-3" for="nav-mode-radio-themed">
+                                                    <input id="nav-mode-radio-themed" type="radio" value="themed" name="nav-mode-radio-group" class="radio text-primary-600">
+                                                    <span>Themed</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-3">Nav Mode</h6>
+                                            <select id="theme-select" class="input input-sm focus:ring-primary-600 focus-within:ring-primary-600 focus-within:border-primary-600 focus:border-primary-600">
+                                                <option value="primary" selected>Indigo</option>
+                                                <option value="red">Red</option>
+                                                <option value="orange">Orange</option>
+                                                <option value="amber">Amber</option>
+                                                <option value="yellow">Yellow</option>
+                                                <option value="lime">Lime</option>
+                                                <option value="green">Green</option>
+                                                <option value="emerald">Emerald</option>
+                                                <option value="teal">Teal</option>
+                                                <option value="cyan">Cyan</option>
+                                                <option value="sky">Sky</option>
+                                                <option value="blue">Blue</option>
+                                                <option value="violet">Violet</option>
+                                                <option value="purple">Purple</option>
+                                                <option value="fuchsia">Fuchsia</option>
+                                                <option value="pink">Pink</option>
+                                                <option value="rose">Rose</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-3">Layout</h6>
+                                            <div class="segment w-full">
+                                                <div class="grid grid-cols-3 gap-4 w-full">
+                                                    <div class="text-center" id="layout-classic">
+                                                        <div class="flex items-center border rounded-md border-gray-200 dark:border-gray-600 cursor-pointer select-none w-100 hover:ring-1 hover:ring-primary-600 hover:border-primary-600 relative min-h-[80px] w-full">
+                                                            <img src="img/thumbs/layouts/classic.jpg" alt="" class="rounded-md dark:hidden">
+                                                            <img src="img/thumbs/layouts/classic-dark.jpg" alt="" class="rounded-md hidden dark:block">
+                                                        </div>
+                                                        <div class="mt-2 font-semibold">Classic</div>
+                                                    </div>
+                                                    <div class="text-center" id="layout-modern">
+                                                        <div class="flex items-center border rounded-md dark:border-gray-600 cursor-pointer select-none w-100 ring-1 ring-primary-600 border-primary-600 hover:ring-1 hover:ring-primary-600 hover:border-primary-600 relative min-h-[80px] w-full">
+                                                            <img src="img/thumbs/layouts/modern.jpg" alt="" class="rounded-md dark:hidden">
+                                                            <img src="img/thumbs/layouts/modern-dark.jpg" alt="" class="rounded-md hidden dark:block">
+                                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="text-primary-600 absolute top-2 right-2 text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="mt-2 font-semibold">Modern</div>
+                                                    </div>
+                                                    <div class="text-center" id="layout-stackedSide">
+                                                        <div class="flex items-center border rounded-md border-gray-200 dark:border-gray-600 cursor-pointer select-none w-100 hover:ring-1 hover:ring-primary-600 hover:border-primary-600 relative min-h-[80px] w-full">
+                                                            <img src="img/thumbs/layouts/stackedSide.jpg" alt="" class="rounded-md dark:hidden">
+                                                            <img src="img/thumbs/layouts/stackedSide-dark.jpg" alt="" class="rounded-md hidden dark:block">
+                                                        </div>
+                                                        <div class="mt-2 font-semibold">Stacked Side</div>
+                                                    </div>
+                                                    <div class="text-center" id="layout-simple">
+                                                        <div class="flex items-center border rounded-md border-gray-200 dark:border-gray-600 cursor-pointer select-none w-100 hover:ring-1 hover:ring-primary-600 hover:border-primary-600 relative min-h-[80px] w-full">
+                                                            <img src="img/thumbs/layouts/simple.jpg" alt="" class="rounded-md dark:hidden">
+                                                            <img src="img/thumbs/layouts/simple-dark.jpg" alt="" class="rounded-md hidden dark:block">
+                                                        </div>
+                                                        <div class="mt-2 font-semibold">Simple</div>
+                                                    </div>
+                                                    <div class="text-center" id="layout-decked">
+                                                        <div class="flex items-center border rounded-md border-gray-200 dark:border-gray-600 cursor-pointer select-none w-100 hover:ring-1 hover:ring-primary-600 hover:border-primary-600 relative min-h-[80px] w-full">
+                                                            <img src="img/thumbs/layouts/decked.jpg" alt="" class="rounded-md dark:hidden">
+                                                            <img src="img/thumbs/layouts/decked-dark.jpg" alt="" class="rounded-md hidden dark:block">
+                                                        </div>
+                                                        <div class="mt-2 font-semibold">Decked</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Popup end -->
+                    <!-- Content start -->
+                    <main class="h-full">
+                        <div class="page-container relative h-full flex flex-auto flex-col px-4 sm:px-6 md:px-8 py-4 sm:py-6">
+                            <div class="container mx-auto">
+                                <h3 class="mb-4">Add New Product</h3>
+                                <form role="form"  method="post" th:action="@{/admin/product-add}" th:object="${product}" enctype="multipart/form-data">
+                                    <div class="form-container vertical">
+                                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                                            <div class="lg:col-span-2">
+                                                <div class="card adaptable-card !border-b pb-6 py-4 rounded-br-none rounded-bl-none">
+                                                    <div class="card-body">
+                                                        <h5>Basic Information</h5>
+                                                        <p class="mb-6">Section to config basic product information</p>
+                                                        <div class="form-item vertical">
+                                                            <label class="form-label mb-2">Product Name</label>
+                                                            <div>
+                                                                <input
+                                                                    class="input"
+                                                                    type="text"
+                                                                    th:field="*{productName}"
+                                                                    autocomplete="off"
+                                                                    placeholder="Name"
+                                                                    value=""
+                                                                >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card adaptable-card !border-b pb-6 py-4 rounded-br-none rounded-bl-none">
+                                                    <div class="card-body">
+                                                        <h5>Pricing</h5>
+                                                        <p class="mb-6">Section to config product sales information</p>
+                                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                            <div class="col-span-1">
+                                                                <div class="form-item vertical">
+                                                                    <label class="form-label mb-2">Quantity</label>
+                                                                    <div>
+                                                                        <input
+                                                                            class="input"
+                                                                            type="text"
+                                                                            name="stock"
+                                                                            autocomplete="off"
+                                                                            th:field="*{quantity}"
+                                                                            placeholder="Quantity"
+                                                                            inputmode="numeric">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-span-1">
+                                                                <div class="form-item vertical">
+                                                                    <label class="form-label mb-2">Price</label>
+                                                                    <div>
+                                                                        <span class="input-wrapper undefined">
+                                                                            <div class="input-suffix-start">$</div>
+                                                                            <input
+                                                                                class="input pl-8"
+                                                                                type="text"
+                                                                                name="price"
+                                                                                th:field="*{price}"
+                                                                                autocomplete="off"
+                                                                                placeholder="Price"
+                                                                                inputmode="numeric">
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                            <div class="col-span-1">
+                                                                <div class="form-item vertical">
+                                                                    <label class="form-label mb-2">Price Old</label>
+                                                                    <div>
+                                                                        <span class="input-wrapper undefined">
+                                                                            <div class="input-suffix-start"> $</div>
+                                                                            <input
+                                                                                class="input pl-8"
+                                                                                type="text"
+                                                                                name="bulkDiscountPrice"
+                                                                                autocomplete="off"
+                                                                                th:field="*{priceOld}"
+                                                                                placeholder="Price Old"
+                                                                                inputmode="numeric">
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-span-1">
+                                                                <div class="form-item vertical">
+                                                                    <label class="form-label mb-2">Category</label>
+                                                                    <div>
+                                                                        <label>
+                                                                            <select class="input" th:field="*{categoryId}">
+                                                                                <option th:each="c : ${categories}" th:value="${c.id}" th:text="${c.name}"></option>
+                                                                            </select>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card adaptable-card pb-6 py-4 ">
+                                                    <div class="card-body">
+                                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                            <div class="col-span-1">
+                                                                <div class="form-item vertical">
+                                                                    <label class="form-label mb-2">Status</label>
+                                                                    <div class="flex gap-4">
+                                                                        <label class="radio-label inline-flex">
+                                                                            <input type="radio" class="radio" th:field="*{status}" checked="checked" value="1">
+                                                                            <span>In Stock</span>
+                                                                        </label>
+                                                                        <label class="radio-label inline-flex">
+                                                                            <input type="radio" class="radio" th:field="*{status}"  value="0">
+                                                                            <span>Out Of Stock</span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-item vertical">
+                                                    <label class="form-label mb-2">Description</label>
+                                                    <label>
+                                                        <textarea id="editor1" rows="10" cols="80" th:field="*{description}">
+                                                            This is my textarea to be replaced with CKEditor 4.
+                                                        </textarea>
+
+                                                    </label>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="lg:col-span-1">
+                                                <div class="card adaptable-card mb-4">
+                                                    <div class="card-body">
+                                                        <h5>Product Image</h5>
+                                                        <p class="mb-6">Add or change image for the product</p>
+                                                        <div class="form-item vertical">
+                                                            <label class="form-label"></label>
+                                                            <div>
+                                                                <div class="upload upload-draggable hover:border-primary-600">
+                                                                    <input
+                                                                        class="upload-input draggable"
+                                                                        type="file"
+                                                                        title=""
+                                                                        value=""
+                                                                        name="file"
+                                                                        onchange="showImg(this, 'preview')">
+                                                                    <div class="my-16 text-center">
+                                                                        <img src="../assets/img/others/upload.png" alt="" class="mx-auto" id="preview">
+                                                                        <p class="font-semibold">
+                                                                            <span class="text-gray-800 dark:text-white">Drop your image here, or</span>
+                                                                            <span class="text-blue-500">browse</span>
+                                                                        </p>
+                                                                        <p class="mt-1 opacity-60 dark:text-white">Support: jpeg, png</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="stickyFooter" class="sticky -bottom-1 -mx-8 px-8 flex items-center justify-end py-4">
+                                            <div class="md:flex items-center">
+                                                <button class="btn btn-default btn-sm ltr:mr-2 rtl:ml-2" type="button">Discard</button>
+                                                <button class="btn btn-solid btn-sm" type="submit" >
+                                                    <span class="flex items-center justify-center">
+                                                        <span class="text-lg">
+                                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M893.3 293.3L730.7 130.7c-7.5-7.5-16.7-13-26.7-16V112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V338.5c0-17-6.7-33.2-18.7-45.2zM384 184h256v104H384V184zm456 656H184V184h136v136c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V205.8l136 136V840zM512 442c-79.5 0-144 64.5-144 144s64.5 144 144 144 144-64.5 144-144-64.5-144-144-144zm0 224c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z"></path>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="ltr:ml-1 rtl:mr-1">Save</span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </main>
+                    <!-- Content end -->
+                    <!-- Footer start -->
+                    <footer th:replace="~{admin/layout/footer :: footer}"></footer>
+                    <!-- Footer end -->
+                </div>
+            </div>
+        </div>
+</div>
+<div th:replace="~{admin/layout/script :: script}"></div>
+<script th:src="@{/assets/ckeditor/ckeditor.js}"></script>
+<script>
+    CKEDITOR.replace('editor1');
+</script>
+
+<script type="">
+    function showImg(input, target) {
+        let file = input.files[0];
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function() {
+            let img = document.getElementById(target);
+            // can also use "this.result"
+            img.src = reader.result;
+        }
+    }
+</script>
+</body>
+<!-- Mirrored from www.themenate.net/elstar-html/modern-new-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Nov 2023 02:18:46 GMT -->
+</html>

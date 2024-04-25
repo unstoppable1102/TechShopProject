@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light" xmlns:th="http://www.thymeleaf.org">
+<!-- Mirrored from www.themenate.net/elstar-html/modern-product-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Nov 2023 02:18:23 GMT -->
+<head th:replace="~{admin/layout/head :: head}"></head>
+<body>
+<!-- App Start-->
+<div id="root">
+    <!-- App Layout-->
+    <div class="app-layout-modern flex flex-auto flex-col">
+        <div class="flex flex-auto min-w-0">
+            <!-- Side Nav start-->
+            <div th:replace="~{admin/layout/sidebar :: sidebar}"></div>
+            <!-- Side Nav end-->
+            <!-- Header Nav start-->
+            <div class="flex flex-col flex-auto min-h-screen min-w-0 relative w-full bg-white dark:bg-gray-800 border-l border-gray-200 dark:border-gray-700">
+                <header th:replace="~{admin/layout/header :: header}"></header>
+                <!-- Popup start -->
+                <div class="modal fade" id="nav-config" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog drawer drawer-end">
+                        <div class="drawer-content">
+                            <div class="drawer-header">
+                                <h4>Theme Config</h4>
+                                <span class="close-btn close-btn-default" role="button" data-bs-dismiss="modal">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="drawer-body">
+                                <div class="flex flex-col h-full justify-between">
+                                    <div class="flex flex-col gap-y-10 mb-6">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h6>Dark Mode</h6>
+                                                <span>Switch theme to dark mode</span>
+                                            </div>
+                                            <div>
+                                                <label class="switcher">
+                                                    <input name="dark-mode-toggle" type="checkbox" value="">
+                                                    <span class="switcher-toggle"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h6>Direction</h6>
+                                                <span>Select a direction</span>
+                                            </div>
+                                            <div class="input-group">
+                                                <button id="dir-ltr-button" class="btn btn-default btn-sm btn-active">
+                                                    LTR
+                                                </button>
+                                                <button id="dir-rtl-button" class="btn bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 active:bg-gray-100 dark:active:bg-gray-500 dark:active:border-gray-500 text-gray-600 dark:text-gray-100 radius-round h-9 px-3 py-2 text-sm">
+                                                    RTL
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-3">Nav Mode</h6>
+                                            <div class="inline-flex">
+                                                <label class="radio-label inline-flex mr-3" for="nav-mode-radio-default">
+                                                    <input id="nav-mode-radio-default" type="radio" value="default" name="nav-mode-radio-group" class="radio text-primary-600" checked>
+                                                    <span>Default</span>
+                                                </label>
+                                                <label class="radio-label inline-flex mr-3" for="nav-mode-radio-themed">
+                                                    <input id="nav-mode-radio-themed" type="radio" value="themed" name="nav-mode-radio-group" class="radio text-primary-600">
+                                                    <span>Themed</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-3">Nav Mode</h6>
+                                            <select id="theme-select" class="input input-sm focus:ring-primary-600 focus-within:ring-primary-600 focus-within:border-primary-600 focus:border-primary-600">
+                                                <option value="primary" selected>Indigo</option>
+                                                <option value="red">Red</option>
+                                                <option value="orange">Orange</option>
+                                                <option value="amber">Amber</option>
+                                                <option value="yellow">Yellow</option>
+                                                <option value="lime">Lime</option>
+                                                <option value="green">Green</option>
+                                                <option value="emerald">Emerald</option>
+                                                <option value="teal">Teal</option>
+                                                <option value="cyan">Cyan</option>
+                                                <option value="sky">Sky</option>
+                                                <option value="blue">Blue</option>
+                                                <option value="violet">Violet</option>
+                                                <option value="purple">Purple</option>
+                                                <option value="fuchsia">Fuchsia</option>
+                                                <option value="pink">Pink</option>
+                                                <option value="rose">Rose</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-3">Layout</h6>
+                                            <div class="segment w-full">
+                                                <div class="grid grid-cols-3 gap-4 w-full">
+                                                    <div class="text-center" id="layout-classic">
+                                                        <div class="flex items-center border rounded-md border-gray-200 dark:border-gray-600 cursor-pointer select-none w-100 hover:ring-1 hover:ring-primary-600 hover:border-primary-600 relative min-h-[80px] w-full">
+                                                            <img src="../assets/img/thumbs/layouts/classic.jpg" alt="" class="rounded-md dark:hidden">
+                                                            <img src="../assets/img/thumbs/layouts/classic-dark.jpg" alt="" class="rounded-md hidden dark:block">
+                                                        </div>
+                                                        <div class="mt-2 font-semibold">Classic</div>
+                                                    </div>
+                                                    <div class="text-center" id="layout-modern">
+                                                        <div class="flex items-center border rounded-md dark:border-gray-600 cursor-pointer select-none w-100 ring-1 ring-primary-600 border-primary-600 hover:ring-1 hover:ring-primary-600 hover:border-primary-600 relative min-h-[80px] w-full">
+                                                            <img src="../assets/img/thumbs/layouts/modern.jpg" alt="" class="rounded-md dark:hidden">
+                                                            <img src="../assets/img/thumbs/layouts/modern-dark.jpg" alt="" class="rounded-md hidden dark:block">
+                                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="text-primary-600 absolute top-2 right-2 text-lg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="mt-2 font-semibold">Modern</div>
+                                                    </div>
+                                                    <div class="text-center" id="layout-stackedSide">
+                                                        <div class="flex items-center border rounded-md border-gray-200 dark:border-gray-600 cursor-pointer select-none w-100 hover:ring-1 hover:ring-primary-600 hover:border-primary-600 relative min-h-[80px] w-full">
+                                                            <img src="../assets/img/thumbs/layouts/stackedSide.jpg" alt="" class="rounded-md dark:hidden">
+                                                            <img src="../assets/img/thumbs/layouts/stackedSide-dark.jpg" alt="" class="rounded-md hidden dark:block">
+                                                        </div>
+                                                        <div class="mt-2 font-semibold">Stacked Side</div>
+                                                    </div>
+                                                    <div class="text-center" id="layout-simple">
+                                                        <div class="flex items-center border rounded-md border-gray-200 dark:border-gray-600 cursor-pointer select-none w-100 hover:ring-1 hover:ring-primary-600 hover:border-primary-600 relative min-h-[80px] w-full">
+                                                            <img src="../assets/img/thumbs/layouts/simple.jpg" alt="" class="rounded-md dark:hidden">
+                                                            <img src="../assets/img/thumbs/layouts/simple-dark.jpg" alt="" class="rounded-md hidden dark:block">
+                                                        </div>
+                                                        <div class="mt-2 font-semibold">Simple</div>
+                                                    </div>
+                                                    <div class="text-center" id="layout-decked">
+                                                        <div class="flex items-center border rounded-md border-gray-200 dark:border-gray-600 cursor-pointer select-none w-100 hover:ring-1 hover:ring-primary-600 hover:border-primary-600 relative min-h-[80px] w-full">
+                                                            <img src="../assets/img/thumbs/layouts/decked.jpg" alt="" class="rounded-md dark:hidden">
+                                                            <img src="../assets/img/thumbs/layouts/decked-dark.jpg" alt="" class="rounded-md hidden dark:block">
+                                                        </div>
+                                                        <div class="mt-2 font-semibold">Decked</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Popup end -->
+                    <!-- Content start -->
+                    <main class="h-full">
+                        <div class="page-container relative h-full flex flex-auto flex-col px-4 sm:px-6 md:px-8 py-4 sm:py-6">
+                            <div class="container mx-auto">
+                                <div class="card adaptable-card">
+                                    <div class="card-body">
+                                        <div class="lg:flex items-center justify-between mb-4">
+                                            <h3 class="mb-4 lg:mb-0">Products</h3>
+                                            <div class="flex-wrap inline-flex xl:flex items-center gap-2">
+                                                <a class="btn btn-default mr-2 bg-rose-600 hover:bg-rose-500 active:bg-rose-700 text-white"
+                                                    href="/admin/product-add">
+                                                        <span class="flex items-center justify-center gap-2">
+                                                            <span class="text-lg">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-6 h-6">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                                                                </svg>
+                                                            </span>
+                                                            <span>Add New Product</span>
+                                                        </span>
+                                                </a>
+                                                <a class="btn btn-two-tune" href="">
+                                                    <span class="flex items-center justify-center gap-2">
+                                                        <span class="text-lg">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                                 stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-6 h-6">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                        <span>Recycle Bin</span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-x-auto">
+                                            <table id="product-list-data-table" class="table-default table-hover data-table ">
+                                                <thead>
+                                                <tr>
+                                                    <th>No.</th>
+                                                    <th>Name</th>
+                                                    <th>Category</th>
+                                                    <th>Quantity</th>
+                                                    <th>Status</th>
+                                                    <th>Price</th>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="p,iter : ${products}">
+                                                    <td th:text="${iter.count}"></td>
+                                                    <td>
+                                                        <div class="flex items-center">
+                                                             <span class="avatar avatar-rounded avatar-md">
+                                                                <img  th:src="@{'/uploads/'+${p.image}}" class="avatar-img avatar-rounded" loading="lazy" alt="anh">
+                                                            </span>
+                                                            <span class="ml-2 rtl:mr-2 font-semibold" th:text="${p.productName}"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="capitalize" th:text="${p.category.name}"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span th:text="${p.quantity}"></span>
+                                                    </td>
+                                                    <td th:if="${p.status}">
+                                                        <div class="flex items-center gap-2">
+                                                            <span class="badge-dot bg-emerald-500"></span>
+                                                            <span class="capitalize font-semibold text-emerald-500">In Stock</span>
+                                                        </div>
+                                                    </td>
+                                                    <td th:if="${!p.status}">
+                                                        <div class="flex items-center gap-2">
+                                                            <span class="badge-dot bg-red-500"></span>
+                                                            <span class="capitalize font-semibold text-red-500">Out of Stock</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span>$</span><span th:text="${p.price}"></span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex justify-end text-lg">
+                                                            <a th:href="@{/admin/product-edit/{productId}(productId=${p.productId})}">
+                                                            <span class="cursor-pointer p-2 hover:text-indigo-600">
+                                                                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                                                                </svg>
+                                                            </span>
+                                                            </a>
+                                                            <a th:href="@{/admin/product-delete/{productId}(productId=${p.productId})}"
+                                                             onclick="return confirm('Are you sure?')">
+                                                            <span class="cursor-pointer p-2 hover:text-red-500">
+                                                                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                                                </svg>
+                                                            </span>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="pagination">
+                                                <span class="pagination-pager pagination-pager-prev " th:if="${currentPage > 1}">
+                                                    <a th:href="@{'?pageNo='+${currentPage-1}}">
+                                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </a>
+                                                </span>
+                                                <ul>
+                                                    <li th:each="i:${#numbers.sequence(1, totalPage)}" th:classappend="${currentPage == i} ? 'active' : ''" class="pagination-pager"><a th:href="@{'?pageNo='+${i}}"  th:text="${i}"></a> </li>
+                                                </ul>
+                                                <span class="pagination-pager pagination-pager-next" th:if="${currentPage < totalPage}">
+                                                    <a th:href="@{'?pageNo='+${currentPage+1}}">
+                                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                                        </svg>
+                                                        </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <!-- Content end -->
+                    <!-- Footer start -->
+                    <footer th:replace="~{admin/layout/footer :: footer}"></footer>
+                    <!-- Footer end -->
+                </div>
+            </div>
+        </div>
+    </div>
+<div th:replace="~{admin/layout/script :: script}"></div>
+</body>
+<!-- Mirrored from www.themenate.net/elstar-html/modern-product-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Nov 2023 02:18:37 GMT -->
+</html>

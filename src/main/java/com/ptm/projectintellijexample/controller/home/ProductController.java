@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.List;
+
 @Controller(value = "ProductControllerOfHome")
 @RequiredArgsConstructor
 public class ProductController {
@@ -28,7 +30,8 @@ public class ProductController {
         model.addAttribute("product", product);
         model.addAttribute("categories", categoryService.getAll());
         if (product != null && product.getCategory() != null){
-            model.addAttribute("pExcludepId", productService.getProductsByCategoryExcludingProduct(product.getCategoryId(), productId));
+            List<Product> productCategory = productService.getProductsByCategoryExcludingProduct(product.getCategoryId(), productId);
+            model.addAttribute("pCategory", productCategory);
         }
         return "home/product-detail";
     }

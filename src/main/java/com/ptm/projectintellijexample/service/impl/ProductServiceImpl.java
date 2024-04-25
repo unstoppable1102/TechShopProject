@@ -4,6 +4,7 @@ import com.ptm.projectintellijexample.model.Product;
 import com.ptm.projectintellijexample.repository.ProductRepository;
 import com.ptm.projectintellijexample.service.ProductService;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,15 +15,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
-
 
     private final ProductRepository productRepository;
 
-    @Autowired
-    public ProductServiceImpl(ProductRepository productRepository) {
-        this.productRepository = productRepository;
-    }
     @Override
     public List<Product> getAll() {
         return this.productRepository.findAll();

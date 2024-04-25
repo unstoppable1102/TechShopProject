@@ -48,11 +48,6 @@ public class AdminController {
         return "admin/crm/mail";
     }
 
-    @GetMapping("/sign-in")
-    public String signIn(){
-        return "admin/sign-in";
-    }
-
     @GetMapping("/sign-up")
     public String signUp(){
         return "admin/sign-up";

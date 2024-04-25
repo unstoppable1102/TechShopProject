@@ -1,9 +1,7 @@
 package com.ptm.projectintellijexample.configuration;
 
-import com.ptm.projectintellijexample.model.CustomUserDetails;
 import com.ptm.projectintellijexample.service.impl.CustomUserDetailService;
 import lombok.RequiredArgsConstructor;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -27,14 +25,14 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain( HttpSecurity http) throws Exception{
         http.csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests((auth)-> auth.
-                requestMatchers("/*").permitAll().
-                requestMatchers("/admin/**").hasAuthority("ADMIN").
-                //requestMatchers("/admin/**").permitAll().
-                anyRequest().authenticated()).formLogin(login->login.loginPage("/login").loginProcessingUrl("/login").
+                        requestMatchers("/**").permitAll().
+                        requestMatchers("/admin/**").hasAuthority("ADMIN").
+                        requestMatchers("/admin/**").permitAll().
+                anyRequest().authenticated()).formLogin(login->login.loginPage("/admin/logon").loginProcessingUrl("/logon").
                 usernameParameter("username").passwordParameter("password").
                 defaultSuccessUrl("/admin", true)).logout(logout
-                        -> logout.logoutUrl("admin/logout").logoutSuccessUrl("/logon")).
-                logout(logout ->logout.logoutUrl("admin/logout").logoutSuccessUrl("/logon"));
+                        -> logout.logoutUrl("admin/logout").logoutSuccessUrl("/logon").invalidateHttpSession(true));
+
 
         return http.build();
     }
@@ -44,7 +42,4 @@ public class SecurityConfig {
         return (web)-> web.ignoring().requestMatchers("/static/**","/assets/**",
                 "/admin/**", "/fe/**","/uploads/**");
     }
-
-
-
 }

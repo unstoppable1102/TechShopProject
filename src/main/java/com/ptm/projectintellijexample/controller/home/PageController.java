@@ -7,41 +7,41 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PageController {
     @GetMapping("/contact")
     public String contact(){
-        return "home/contact";
+        return "home/page/contact";
     }
 
     @GetMapping("/about")
     public String about(){
-        return "home/about";
+        return "home/page/about";
     }
 
     @GetMapping("/blogs")
     public String blogs(){
-        return "home/blogs";
+        return "home/page/blogs";
     }
 
     @GetMapping("/blog-detail")
     public String blogDetail(){
-        return "home/blog-detail";
+        return "home/page/blog-detail";
     }
 
     @GetMapping("/wishlist")
     public String wishlist(){
-        return "home/wishlist";
+        return "home/page/wishlist";
     }
 
     @GetMapping("/privacy-policy")
     public String privacyPolicy(){
-        return "home/privacy-policy";
+        return "home/page/privacy-policy";
     }
 
     @GetMapping("/terms-of-service")
     public String termsOfService(){
-        return "home/terms-of-service";
+        return "home/page/terms-of-service";
     }
 
     @GetMapping("/page-not-found")
     public String pageNotFound(){
-        return "home/page-not-found";
+        return "home/page/page-not-found";
     }
 }

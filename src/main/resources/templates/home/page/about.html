@@ -1,71 +1,249 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" >
 
 
-<!-- Mirrored from new.axilthemes.com/demo/template/etrade/wishlist.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Oct 2023 08:16:28 GMT -->
+<!-- Mirrored from new.axilthemes.com/demo/template/etrade/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Oct 2023 08:16:30 GMT -->
 <head th:replace="~{home/layout/head :: head}"></head>
 
 
 <body class="sticky-header">
-<!--[if lte IE 9]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-<![endif]-->
+
 <a href="#top" class="back-to-top" id="backto-top"><i class="fal fa-arrow-up"></i></a>
 <!-- Start Header -->
-<header th:replace="home/layout/header :: header"></header>
+<header th:replace="~{home/layout/header :: header}"></header>
 <!-- End Header -->
 
 <main class="main-wrapper">
-
-    <!-- Start Wishlist Area  -->
-    <div class="axil-wishlist-area axil-section-gap">
+    <!-- Start Breadcrumb Area  -->
+    <div class="axil-breadcrumb-area">
         <div class="container">
-            <div class="product-table-heading">
-                <h4 class="title">Danh sách yêu thích trên eTrade</h4>
-            </div>
-            <div class="table-responsive">
-                <table class="table axil-product-table axil-wishlist-table">
-                    <thead>
-                    <tr>
-                        <th scope="col" class="product-remove"></th>
-                        <th scope="col" class="product-thumbnail">Sản phẩm</th>
-                        <th scope="col" class="product-title"></th>
-                        <th scope="col" class="product-price">Đơn giá</th>
-                        <th scope="col" class="product-stock-status">Trạng thái</th>
-                        <th scope="col" class="product-add-cart"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="product-remove"><a href="#" class="remove-wishlist"><i class="fal fa-times"></i></a></td>
-                        <td class="product-thumbnail"><a href="single-product.html"><img src="fe/images/product/electric/product-01.png" alt="Digital Product"></a></td>
-                        <td class="product-title"><a href="single-product.html">Wireless PS Handler</a></td>
-                        <td class="product-price" data-title="Price"><span class="currency-symbol">$</span>124.00</td>
-                        <td class="product-stock-status" data-title="Status">In Stock</td>
-                        <td class="product-add-cart"><a href="cart.html" class="axil-btn btn-outline">Thêm vào giỏ hàng</a></td>
-                    </tr>
-                    <tr>
-                        <td class="product-remove"><a href="#" class="remove-wishlist"><i class="fal fa-times"></i></a></td>
-                        <td class="product-thumbnail"><a href="single-product-2.html"><img src="fe/images/product/electric/product-02.png" alt="Digital Product"></a></td>
-                        <td class="product-title"><a href="single-product-2.html">Gradient Light Keyboard</a></td>
-                        <td class="product-price" data-title="Price"><span class="currency-symbol">$</span>124.00</td>
-                        <td class="product-stock-status" data-title="Status">In Stock</td>
-                        <td class="product-add-cart"><a href="cart.html" class="axil-btn btn-outline">Thêm vào giỏ hàng</a></td>
-                    </tr>
-                    <tr>
-                        <td class="product-remove"><a href="#" class="remove-wishlist"><i class="fal fa-times"></i></a></td>
-                        <td class="product-thumbnail"><a href="single-product-3.html"><img src="fe/images/product/electric/product-03.png" alt="Digital Product"></a></td>
-                        <td class="product-title"><a href="single-product-3.html">HD CC Camera</a></td>
-                        <td class="product-price" data-title="Price"><span class="currency-symbol">$</span>124.00</td>
-                        <td class="product-stock-status" data-title="Status">In Stock</td>
-                        <td class="product-add-cart"><a href="cart.html" class="axil-btn btn-outline">Thêm vào giỏ hàng</a></td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="inner">
+                        <ul class="axil-breadcrumb">
+                            <li class="axil-breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
+                            <li class="separator"></li>
+                            <li class="axil-breadcrumb-item active" aria-current="page">Giới thiệu</li>
+                        </ul>
+                        <h1 class="title">Giới thiệu về cửa hàng</h1>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-4">
+                    <div class="inner">
+                        <div class="bradcrumb-thumb">
+                            <img src="fe/images/product/product-45.png" alt="Image">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- End Wishlist Area  -->
+    <!-- End Breadcrumb Area  -->
+
+    <!-- Start About Area  -->
+    <div class="axil-about-area about-style-1 axil-section-gap ">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-4 col-lg-6">
+                    <div class="about-thumbnail">
+                        <div class="thumbnail">
+                            <img src="fe/images/about/about-01.png" alt="About Us">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-6">
+                    <div class="about-content content-right">
+                        <span class="title-highlighter highlighter-primary2"> <i class="far fa-shopping-basket"></i>Giới thiệu</span>
+                        <h2 class="title">eTrade</h2>
+                        <span>eTrade là đơn vị số 1 tạo nên những trải nghiệm tuyệt vời cho quá trình mua sắm sản phẩm công nghệ tại Việt Nam. Chúng tôi là đối tác ủy quyền tin cậy của các hãng công nghệ uy
+                                    tín hàng đầu trên thế giới trong lĩnh vực thương mại và dịch vụ. Điều tuyệt vời nhất ở eTrade chính là, khi chúng ta trở thành đồng nghiệp, đối tác hay khách hàng
+                                    của nhau, chúng ta đã trở thành người một nhà. Ở mỗi điểm chạm, chúng ta luôn kết nối, bàn bạc và trao đổi để cùng thống nhất mục tiêu chung, bởi chúng ta không có khoảng cách.
+                                </span>
+                        <h2 class="title mt-3">Tầm nhìn, sứ mệnh & định hướng phát triển</h2>
+                        <ul>
+                            <li>Tầm nhìn tương lai, eTrade sẽ là đơn vị tiên phong số 1 trong lĩnh vực cung cấp các sản phẩm công nghệ cao cấp mới nhất tới tay người
+                                tiêu dùng Việt Nam. Nâng cao giá trị trải nghiệm mua sắm cho khách hàng từ những nhu cầu nhỏ nhất với hệ thống stores rộng khắp trên toàn quốc</li>
+                            <li>eTrade đặt ra sứ mệnh phát triển vượt bậc, mang những sản phẩm công nghệ độc đáo tới tay người tiêu dùng nhanh nhất,
+                                giúp tạo ra cuộc sống hiện đại, nơi con người kết nối với công nghệ và công nghệ phục vụ con người.</li>
+                            <li>
+                                Lấy con người và công nghệ làm cốt lõi cho định hướng phát triển doanh nghiệp, xoay quanh khách hàng làm trung tâm, eTrade xây dựng
+                                hệ sinh thái cung cấp sản phẩm, dịch vụ công nghệ cao, định hướng mở rộng chi nhánh ở tất cả các tỉnh trên toàn quốc.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- End About Area  -->
+
+    <!-- Start About Area  -->
+    <div class="about-info-area">
+        <div class="container">
+            <div class="row row--20">
+                <div class="col-lg-4">
+                    <div class="about-info-box">
+                        <div class="thumb">
+                            <img src="fe/images/about/shape-01.png" alt="Shape">
+                        </div>
+                        <div class="content">
+                            <h6 class="title">40,000+ Khách hàng hài lòng</h6>
+                            <p>Trao quyền cho đội ngũ bán hàng của bạn bằng các giải pháp phù hợp với ngành hỗ trợ.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="about-info-box">
+                        <div class="thumb">
+                            <img src="fe/images/about/shape-02.png" alt="Shape">
+                        </div>
+                        <div class="content">
+                            <h6 class="title">Trên 16 năm kinh nghiệm</h6>
+                            <p>Empower your sales teams with industry
+                                tailored solutions that support.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="about-info-box">
+                        <div class="thumb">
+                            <img src="fe/images/about/shape-03.png" alt="Shape">
+                        </div>
+                        <div class="content">
+                            <h6 class="title">Đã giành được 12 giải thưởng</h6>
+                            <p>Empower your sales teams with industry
+                                tailored solutions that support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End About Area  -->
+
+    <!-- Start Team Area  -->
+    <div class="axil-team-area bg-wild-sand">
+        <div class="team-left-fullwidth">
+            <div class="container ml--xxl-0">
+                <div class="section-title-wrapper">
+                    <span class="title-highlighter highlighter-primary"> <i class="fas fa-users"></i> Đội ngũ của chúng tôi</span>
+                    <h3 class="title">Đội ngũ quản lý</h3>
+                </div>
+                <div class="team-slide-activation slick-layout-wrapper--20 axil-slick-arrow  arrow-top-slide">
+                    <div class="slick-single-layout">
+                        <div class="axil-team-member">
+                            <div class="thumbnail"><img src="fe/images/team/team-01.png" alt="Cody Fisher"></div>
+                            <div class="team-content">
+                                <span class="subtitle">Founder</span>
+                                <h5 class="title">Rosalina D. Willson</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-single-layout">
+                        <div class="axil-team-member">
+                            <div class="thumbnail"><img src="fe/images/team/team-02.png" alt="Cody Fisher"></div>
+                            <div class="team-content">
+                                <span class="subtitle">CEO</span>
+                                <h5 class="title">Ukolilix X. Xilanorix</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-single-layout">
+                        <div class="axil-team-member">
+                            <div class="thumbnail"><img src="fe/images/team/team-03.png" alt="Cody Fisher"></div>
+                            <div class="team-content">
+                                <span class="subtitle">Designer</span>
+                                <h5 class="title">Alonso M. Miklonax</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-single-layout">
+                        <div class="axil-team-member">
+                            <div class="thumbnail"><img src="fe/images/team/team-04.png" alt="Cody Fisher"></div>
+                            <div class="team-content">
+                                <span class="subtitle">Designer</span>
+                                <h5 class="title">Alonso M. Miklonax</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-single-layout">
+                        <div class="axil-team-member">
+                            <div class="thumbnail"><img src="fe/images/team/team-02.png" alt="Cody Fisher"></div>
+                            <div class="team-content">
+                                <span class="subtitle">Designer</span>
+                                <h5 class="title">Alonso M. Miklonax</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Team Area  -->
+
+    <!-- Start About Area  -->
+    <div class="axil-about-area about-style-2">
+        <div class="container">
+            <div class="row align-items-center mb--80 mb_sm--60">
+                <div class="col-lg-5">
+                    <div class="about-thumbnail">
+                        <img src="fe/images/about/about-02.png" alt="about">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-content content-right">
+                        <span class="subtitle">Features #01</span>
+                        <h4 class="title">Solutions that work together</h4>
+                        <p>Publish your eCommerce site quickly with our easy-to-use store builder— no
+                            coding required. Migrate your items from your point of sale system or turn your
+                            Instagram feed into a shopping site and start selling fast. Square Online works
+                            for all kinds of businesses—retail, restaurants, services.</p>
+                        <a href="contact.html" class="axil-btn btn-outline">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 order-lg-2">
+                    <div class="about-thumbnail">
+                        <img src="fe/images/about/about-03.png" alt="about">
+                    </div>
+                </div>
+                <div class="col-lg-7 order-lg-1">
+                    <div class="about-content content-left">
+                        <span class="subtitle">Features #01</span>
+                        <h4 class="title">Solutions that work together</h4>
+                        <p>Publish your eCommerce site quickly with our easy-to-use store builder— no
+                            coding required. Migrate your items from your point of sale system or turn your
+                            Instagram feed into a shopping site and start selling fast. Square Online works
+                            for all kinds of businesses—retail, restaurants, services.</p>
+                        <a href="contact.html" class="axil-btn btn-outline">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End About Area  -->
+
+    <!-- Start Axil Newsletter Area  -->
+    <div class="axil-newsletter-area axil-section-gap">
+        <div class="container">
+            <div class="etrade-newsletter-wrapper bg_image bg_image--5">
+                <div class="newsletter-content">
+                    <span class="title-highlighter highlighter-primary2"><i class="fas fa-envelope-open"></i>Newsletter</span>
+                    <h2 class="title mb--40 mb_sm--30">Get weekly update</h2>
+                    <div class="input-group newsletter-form">
+                        <div class="position-relative newsletter-inner mb--15">
+                            <input placeholder="example@gmail.com" type="text">
+                        </div>
+                        <button type="submit" class="axil-btn mb--15">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End .container -->
+    </div>
+    <!-- End Axil Newsletter Area  -->
 </main>
 
 
@@ -120,7 +298,7 @@
     </div>
 </div>
 <!-- Start Footer Area  -->
-<footer th:replace="home/layout/footer :: footer"></footer>
+<footer th:replace="~{home/layout/footer :: footer}"></footer>
 <!-- End Footer Area  -->
 
 <!-- Product Quick View Modal Start -->
@@ -248,7 +426,7 @@
 
                                         <!-- Start Product Action  -->
                                         <ul class="product-action d-flex-center mb--0">
-                                            <li class="add-to-cart"><a href="cart.html" class="axil-btn btn-bg-primary">Add to Cart</a></li>
+                                            <li class="add-to-cart"><a href="../cart.html" class="axil-btn btn-bg-primary">Add to Cart</a></li>
                                             <li class="wishlist"><a href="wishlist.html" class="axil-btn wishlist-btn"><i class="far fa-heart"></i></a></li>
                                         </ul>
                                         <!-- End Product Action  -->
@@ -281,7 +459,7 @@
         <div class="card-body">
             <div class="search-result-header">
                 <h6 class="title">24 Result Found</h6>
-                <a href="product/shop.html" class="view-all">View All</a>
+                <a href="../product/shop.html" class="view-all">View All</a>
             </div>
             <div class="psearch-results">
                 <div class="axil-product-list">
@@ -307,7 +485,7 @@
                             <span class="price old-price">$49.99</span>
                         </div>
                         <div class="product-cart">
-                            <a href="cart.html" class="cart-btn"><i class="fal fa-shopping-cart"></i></a>
+                            <a href="../cart.html" class="cart-btn"><i class="fal fa-shopping-cart"></i></a>
                             <a href="wishlist.html" class="cart-btn"><i class="fal fa-heart"></i></a>
                         </div>
                     </div>
@@ -335,7 +513,7 @@
                             <span class="price old-price">$49.99</span>
                         </div>
                         <div class="product-cart">
-                            <a href="cart.html" class="cart-btn"><i class="fal fa-shopping-cart"></i></a>
+                            <a href="../cart.html" class="cart-btn"><i class="fal fa-shopping-cart"></i></a>
                             <a href="wishlist.html" class="cart-btn"><i class="fal fa-heart"></i></a>
                         </div>
                     </div>
@@ -433,17 +611,17 @@
                 <span class="subtotal-amount">$610.00</span>
             </h3>
             <div class="group-btn">
-                <a href="cart.html" class="axil-btn btn-bg-primary viewcart-btn">View Cart</a>
-                <a href="checkout.html" class="axil-btn btn-bg-secondary checkout-btn">Checkout</a>
+                <a href="../cart.html" class="axil-btn btn-bg-primary viewcart-btn">View Cart</a>
+                <a href="../checkout.html" class="axil-btn btn-bg-secondary checkout-btn">Checkout</a>
             </div>
         </div>
     </div>
 </div>
 
-<div th:replace="home/layout/script :: script"></div>
+<div th:replace="~{home/layout/script :: script}"></div>
 
 </body>
 
 
-<!-- Mirrored from new.axilthemes.com/demo/template/etrade/wishlist.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Oct 2023 08:16:28 GMT -->
+<!-- Mirrored from new.axilthemes.com/demo/template/etrade/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Oct 2023 08:16:33 GMT -->
 </html>

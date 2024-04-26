@@ -5,7 +5,6 @@ import com.ptm.projectintellijexample.repository.ProductRepository;
 import com.ptm.projectintellijexample.service.ProductService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -76,7 +75,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Page<Product> getAll(Integer pageNo) {
         Pageable pageable = PageRequest.of(pageNo-1, 6);
-        return productRepository.findAll(pageable);
+        return this.productRepository.findAll(pageable);
     }
 
     @Override
